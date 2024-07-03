@@ -1,0 +1,17 @@
+CREATE VIEW student_class_teacher AS
+
+SELECT 
+    students.id AS student_id,
+    students.name AS student_name,
+    students.age AS student_age,
+    classes.name AS class_name,
+    teachers.name AS teacher_name,
+    teachers.subject AS teacher_subject
+FROM 
+    students
+JOIN 
+    classes ON students.class_id = classes.id
+JOIN 
+    teachers ON classes.teacher_id = teachers.id;
+
+SELECT * FROM student_class_teacher;

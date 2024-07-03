@@ -1,0 +1,10 @@
+SELECT 
+	students.`name` as student_name,
+	students.age as student_age,
+	classes.`name` as class_name,
+	teachers.`name` as teacher_name,
+	teachers.`subject` as teacher_subjct
+FROM
+	students
+INNER JOIN classes ON classes.id = students.class_id
+INNER JOIN teachers ON teachers.id = classes.teacher_id

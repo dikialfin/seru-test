@@ -1,0 +1,10 @@
+SELECT 
+		teachers.`name`,
+    GROUP_CONCAT(classes.`name`) as class_name
+FROM 
+    classes
+JOIN teachers ON teachers.id = classes.teacher_id
+GROUP BY 
+    classes.teacher_id
+HAVING 
+    COUNT(*) > 1;
